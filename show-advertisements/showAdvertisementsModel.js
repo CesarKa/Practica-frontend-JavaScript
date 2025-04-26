@@ -1,6 +1,4 @@
 
-
-
 export async function getAdvertisements() {
     let advertisements = [];
 
