@@ -5,15 +5,23 @@ export function notificationsController(notifications) {
         const newNotification = document.createElement('div');
         newNotification.innerHTML = buildNotification(message);
 
+        const removeNotification = () => {
+            newNotification.remove();   
+        }
+
         notifications.appendChild(newNotification)
 
         const closeButton = newNotification.querySelector("button");
 
         closeButton.addEventListener("click", () => {
-            newNotification.remove();
-        })
+            removeNotification()
+        });
 
-          
+        setTimeout(() => {
+            removeNotification()
+        }, 5000);  
+
+        
     }
 
     return {
