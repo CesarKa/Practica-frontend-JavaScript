@@ -7,3 +7,7 @@ export const buildAd = (ad) => {
         <p> ${ad.type} </p>
     `
 };
+
+export const buildNoAdvertisementAdvise = () => {
+    return '<h3> Lo siento no hay anuncios disponibles!! :( </h3>';
+};
