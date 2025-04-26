@@ -7,7 +7,7 @@ export async function getAdvertisements() {
         advertisements = await response.json();
         
     } catch (error) {
-        throw new Error("Opss! No ha sido posible obtener anuncios. Inténtalo de nuevo mas tarde.")
+        throw new Error("Opss! No ha sido posible obtener anuncios. Inténtalo de nuevo más tarde.")
     }
     return advertisements;
 }

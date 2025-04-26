@@ -13,7 +13,11 @@ export async function showAdController(container) {
         const advertisements = await getAdvertisements();
         drawAdvertisements(advertisements, container)
     } catch (error) {
-        alert(error.message)
+        //alert(error.message)
+        const event = new CustomEvent("load-advertisement-error", {
+            detail: error.message
+        })
+        container.dispatchEvent(event)
     } finally {
         const event = new CustomEvent("load-advertisement-finished")
         container.dispatchEvent(event)
