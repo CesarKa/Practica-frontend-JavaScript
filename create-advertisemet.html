@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Crear Anuncio</h1>
+
+    <form>
+        <label for="imagen">Imagen: </label>
+        <input
+        id="imagen"
+        name="imagen"
+        type="file"
+        placeholder="imagen del producto"
+        />
+        <br>
+
+        <label for="name">Nombre: </label>
+        <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="nombre del producto"
+        />
+        <br>
+
+        <label for="description">Descripcion: </label>
+        <textarea 
+        name="description" 
+        id="description" 
+        required 
+        maxlength="300"></textarea>
+        <br />
+
+        <label for="price">Precio: </label>
+      <input
+        id="price"
+        name="price"
+        type="number"
+        placeholder="introduce precio"
+      />
+      <br>
+
+      <label for="type">Compra o venta: </label>
+        <select 
+        name="type"
+        id="type"
+        name="type"
+        >
+        <option value="Compra">Compra </option>
+        <option value="venta" >venta</option>
+        </select>
+        <br>
+
+        <button>Crear Anuncio</button>
+    </form>
+
+    <script type="module" src="./createAdvertisement.js"></script>
+  </body>
+</html>
