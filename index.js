@@ -1,4 +1,5 @@
 import { notificationsController } from "./notifications/notificationsController.js";
+import { sessionController } from "./session/sessionController.js";
 import { showAdController  } from "./show-advertisements/showAdvertisementsController.js";
 import { loaderController } from "./show-loader/showLoaderController.js";
 
@@ -8,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".ad-conteiner")
   const loader = document.querySelector(".loader")
   const notifications = document.querySelector(".notifications")
+  const session = document.querySelector(".session")
+
+
   const { show, hide} = loaderController(loader)
   const { showNotification } = notificationsController(notifications)
 
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   showAdController(container)
+  sessionController(session)
 });
 
 

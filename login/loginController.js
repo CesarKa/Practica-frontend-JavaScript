@@ -18,6 +18,9 @@ export function loginController(loginForm) {
     } else {
       handleLoginUser(userEmail, password)
     }
+    setTimeout(() => {
+      window.location = '/'
+    }, 5000);
 
   })
 
@@ -25,6 +28,8 @@ export function loginController(loginForm) {
     const token = await loginUser(userEmail, password);
 
     localStorage.setItem("token", token)
+    
   }
+
 }
 
