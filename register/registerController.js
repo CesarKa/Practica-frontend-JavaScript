@@ -1,7 +1,14 @@
+import { REGEXP } from "../utils/constants.js";
+import { createUser } from "./registerModel.js";
+
+
 export const registerController = (form) => {
 
-    form.addEventLisener("submit", (event) => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
+
+        const nameElement = form.querySelector('#name');
+        const name = nameElement.value;
 
         const emailElement = form.querySelector('#email');
         const email = emailElement.value;
@@ -25,7 +32,7 @@ export const registerController = (form) => {
         }
 
         if (errors.length === 0) {
-            //crear usuario
+            handleCreateUser(name, email, password, form)
         } else {
             errors.forEach(error => {
                 const event = new CustomEvent("register-error", {
@@ -35,4 +42,25 @@ export const registerController = (form) => {
             })
         }
     })
+
+    const handleCreateUser = async (name, email, password, form) => {
+        try {
+          await createUser(name, email, password);
+          const event = new CustomEvent("register-ok", {
+            detail: {
+              message: 'Te has registrado correctamente',
+              type: 'success'
+            }
+          });
+          form.dispatchEvent(event)
+          setTimeout(() => {
+            window.location = '/'
+          }, 5000);
+        } catch (error) {
+          const event = new CustomEvent("register-error", {
+            detail: error
+          });
+          form.dispatchEvent(event)
+        }
+      }
 }
