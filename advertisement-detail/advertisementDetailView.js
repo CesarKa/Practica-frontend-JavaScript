@@ -14,7 +14,7 @@ export const buildAdvertisementDetailView = (ad) => {
   
   export const  buildRemoveAdvertisementButton = () => {
     const removeButton = document.createElement("button");
-    removeButton.textContent = 'Borrar advertisement';
+    removeButton.textContent = 'Borrar anuncio';
   
     return removeButton;
 }

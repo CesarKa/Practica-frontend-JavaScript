@@ -9,7 +9,7 @@ export const advertisementDetailController = async (advertisementContainer, adve
     advertisementContainer.appendChild(removeButton)
 
     removeButton.addEventListener("click", () => {
-      if (confirm("¿estás seguro de borrar el tweet?")) {
+      if (confirm("¿estás seguro de borrar el anuncio?")) {
         removeAdvertisement(advertisementId)
         window.location = '/'
       }
