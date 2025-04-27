@@ -9,6 +9,6 @@ export const buildAd = (ad) => {
 };
 
 export const buildNoAdvertisementAdvise = () => {
-    return '<h3> Lo siento no hay anuncios disponibles!! :( </h3>';
+    return '<h3>Ops! Lo siento no hay anuncios disponibles!! :( </h3>';
 };
 

@@ -13,7 +13,7 @@ export async function showAdController(container) {
         const advertisements = await getAdvertisements();
         drawAdvertisements(advertisements, container)
     } catch (error) {
-        //alert(error.message)
+        
         const event = new CustomEvent("load-advertisement-error", {
             detail: error.message
         })
@@ -31,12 +31,14 @@ function drawAdvertisements (advertisements, container) {
 
     if (advertisements.length === 0 ) {
         container.innerHTML = buildNoAdvertisementAdvise()
-    } else {
-        advertisements.forEach((ad) => {
-            const adHtml = document.createElement("div");
-            adHtml.innerHTML = buildAd(ad)
+    } 
+
+    advertisements.forEach((ad) => {
+        const adHtml = document.createElement("a");
+        adHtml.setAttribute("href", `./advertisement-detail.html?id=${ad.id}`)
+        adHtml.innerHTML = buildAd(ad)
+
+        container.appendChild(adHtml)
+    })
     
-            container.appendChild(adHtml)
-        })
-    }
-}
+} 
