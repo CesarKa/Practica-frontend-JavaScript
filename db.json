@@ -1,1 +1,66 @@
-{"users":[{"name":"aaaaa","username":"qweaweaa@gmail.com","password":"$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC","id":1},{"name":"Cesar","username":"cesarlmf8@gmail.com","password":"$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC","id":2},{"name":"Mario","username":"mario@mario.com","password":"$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC","id":3},{"name":"Pedro","username":"pedro@pedro.com","password":"$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC","id":4},{"name":"Anotio","username":"antonio@gmail.com","password":"$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC","id":5}],"advertisements":[{"imagen":"C:\\fakepath\\descarga.jpg","name":"Bici montaña","description":"Bicicleta en perfecto estado","price":"400","type":"venta","userId":2,"updatedAt":"2025-04-27T19:28:32.498Z","id":6},{"imagen":"","name":"Zapas","description":"Necesito zapas de correr","price":"50","type":"Compra","userId":2,"updatedAt":"2025-04-27T19:29:41.919Z","id":7},{"imagen":"","name":"Teclado","description":"Teclado para aprender a programar","price":"20","type":"venta","userId":2,"updatedAt":"2025-04-27T19:30:22.433Z","id":8}]}
+{
+    "users": [
+        {
+            "name": "aaaaa",
+            "username": "qweaweaa@gmail.com",
+            "password": "$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC",
+            "id": 1
+        },
+        {
+            "name": "Cesar",
+            "username": "cesarlmf8@gmail.com",
+            "password": "$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC",
+            "id": 2
+        },
+        {
+            "name": "Mario",
+            "username": "mario@mario.com",
+            "password": "$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC",
+            "id": 3
+        },
+        {
+            "name": "Pedro",
+            "username": "pedro@pedro.com",
+            "password": "$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC",
+            "id": 4
+        },
+        {
+            "name": "Anotio",
+            "username": "antonio@gmail.com",
+            "password": "$2b$10$qGr2Z5bOwyVqW8MaF.VSgezGjJL9krndyCnogdzXOM4Y6KzKXp0FC",
+            "id": 5
+        }
+    ],
+    "advertisements": [
+        {
+            "imagen": "C:\\fakepath\\descarga.jpg",
+            "name": "Bici montaña",
+            "description": "Bicicleta en perfecto estado",
+            "price": "400",
+            "type": "venta",
+            "userId": 2,
+            "updatedAt": "2025-04-27T19:28:32.498Z",
+            "id": 6
+        },
+        {
+            "imagen": "",
+            "name": "Zapas",
+            "description": "Necesito zapas de correr",
+            "price": "50",
+            "type": "Compra",
+            "userId": 2,
+            "updatedAt": "2025-04-27T19:29:41.919Z",
+            "id": 7
+        },
+        {
+            "imagen": "",
+            "name": "Teclado",
+            "description": "Teclado para aprender a programar",
+            "price": "20",
+            "type": "venta",
+            "userId": 2,
+            "updatedAt": "2025-04-27T19:30:22.433Z",
+            "id": 8
+        }
+    ]
+}
