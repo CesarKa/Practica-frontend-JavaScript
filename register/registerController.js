@@ -44,26 +44,32 @@ export const registerController = (form) => {
     })
 
     const handleCreateUser = async (name, email, password, form) => {
-        try {
-          await createUser(name, email, password);
-          const event = new CustomEvent("register-ok", {
-            detail: {
-              message: 'Te has registrado correctamente',
-              type: 'success'
-            }
-          });
-          form.dispatchEvent(event)
-          setTimeout(() => {
-            window.location = '/'
-          }, 5000);
-        } catch (error) {
-          const event = new CustomEvent("register-error", {
-            detail:{
-              message: 'No te has podido registrar',
-              type: 'error'
-            }
-          });
-          form.dispatchEvent(event)
-        }
+      const event = new CustomEvent("register-start")
+      form.dispatchEvent(event)
+      
+      try {
+        await createUser(name, email, password);
+        const event = new CustomEvent("register-ok", {
+          detail: {
+            message: 'Te has registrado correctamente',
+            type: 'success'
+          }
+        });
+        form.dispatchEvent(event)
+        setTimeout(() => {
+          window.location = '/'
+        }, 5000);
+      } catch (error) {
+        const event = new CustomEvent("register-error", {
+          detail:{
+            message: 'No te has podido registrar',
+            type: 'error'
+          }
+        });
+        form.dispatchEvent(event)
+      } finally {
+        const event = new CustomEvent("register-finished")
+        form.dispatchEvent(event)
       }
+    }
 }
