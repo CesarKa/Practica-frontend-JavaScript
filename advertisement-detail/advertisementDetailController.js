@@ -9,14 +9,31 @@ export const advertisementDetailController = async (advertisementContainer, adve
     advertisementContainer.appendChild(removeButton)
 
     removeButton.addEventListener("click", () => {
-      if (confirm("¿estás seguro de borrar el anuncio?")) {
-        removeAdvertisement(advertisementId)
-        window.location = '/'
+      try {
+        if (confirm("¿estás seguro de borrar el anuncio?")) {
+          removeAdvertisement(advertisementId)
+          window.location = '/'
+        }
+        const event = new CustomEvent("advertisement-delete-start")
+        container.dispatchEvent(event)
+      } catch {
+        const event = new CustomEvent('advertisement-delete-error', {
+          detail: {
+            message: 'No se ha podido borrar el anuncio'
+          }  
+        });
+        form.dispatchEvent(event)
+      } finally {
+        const event = new CustomEvent("advertisement-delete-finished")
+        container.dispatchEvent(event)
       }
+      
     })
   }
 
   try {
+    const event = new CustomEvent ('advertisement-start')
+    advertisementContainer.dispatchEvent(event)
     const advertisementDetail = await advertisementDetailModel(advertisementId)
     advertisementContainer.innerHTML = buildAdvertisementDetailView(advertisementDetail)
 
@@ -25,7 +42,17 @@ export const advertisementDetailController = async (advertisementContainer, adve
       showRemoveAdvertisementButton(advertisementId)
     }
   } catch (error) {
-    alert(error.message)
+    const event = new CustomEvent('advertisement-error', {
+      detail: {
+        message: 'No se ha podido cargar el anuncio'
+      }
+    })
+    
+    advertisementContainer.dispatchEvent(event)
+    
+  } finally {
+    const event = new CustomEvent('advertisement-finished')
+    advertisementContainer.dispatchEvent(event)
   }
 
 }

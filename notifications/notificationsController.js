@@ -22,7 +22,7 @@ export function notificationsController(notifications){
 
     setTimeout(() => {
       removeNotification(newNotification)
-    }, 5000);
+    }, 4000);
   }
 
   return {
