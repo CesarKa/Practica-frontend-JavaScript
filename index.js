@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   container.addEventListener('load-advertisement-finished', () => {
     hide()
-    showNotification('ya he terminado de cargar los anuncios')
   }) 
   container.addEventListener('load-advertisement-error', (event) => {
     const errorMessage = event.detail
