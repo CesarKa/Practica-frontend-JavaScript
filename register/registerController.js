@@ -61,10 +61,7 @@ export const registerController = (form) => {
         }, 5000);
       } catch (error) {
         const event = new CustomEvent("register-error", {
-          detail:{
-            message: 'No te has podido registrar',
-            type: 'error'
-          }
+          detail: error  
         });
         form.dispatchEvent(event)
       } finally {
