@@ -54,6 +54,10 @@ export function loginController(loginForm) {
         }
       })
       loginForm.dispatchEvent(eventko)
+      setTimeout(() => {
+        window.location = '/'
+      }, 2000);
+
     } finally {
       const event = new CustomEvent('login-finished')
       loginForm.dispatchEvent(event)
